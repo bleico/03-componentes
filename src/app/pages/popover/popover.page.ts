@@ -19,7 +19,7 @@ export class PopoverPage implements OnInit {
       component: PopinfoComponent,
       event: evento,
       mode: 'ios',
-      backdropDismiss: false
+      backdropDismiss: false //Para que ajuro se tenga que seleccionar un item
     });
 
     await popover.present();
