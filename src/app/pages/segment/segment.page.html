@@ -2,8 +2,7 @@
 <ion-toolbar>
 
   <!-- Default Segment -->
-  <ion-segment (ionChange)="segmentChanged($event)"
-                color="tertiary">
+  <ion-segment (ionChange)="segmentChanged($event)" color="tertiary">
 
     <ion-segment-button value="todos">
       <ion-label>Todos</ion-label>
@@ -22,8 +21,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'"
-              class="animated fadeIn fast">
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'" class="animated fadeIn fast">
       <ion-label>
         <h3> {{ heroe.superHero }} <small> {{ heroe.alter_ego }} </small></h3>
         <p>
@@ -37,4 +35,25 @@
 
     </ion-item>
   </ion-list>
+
+  <ion-list *ngIf="(superHeroes | async) === null">
+    <ion-item *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]"
+              class="animated flash slow infinite">
+
+      <ion-label>
+        <h3>
+          <ion-skeleton-text width="70%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text width="100%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+
+      <ion-label slot="end" text-right>
+        <ion-skeleton-text width="40px"></ion-skeleton-text>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
 </ion-content>
