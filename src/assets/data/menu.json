@@ -98,5 +98,10 @@
     "icon": "copy",
     "name": "Segment",
     "redirecTo": "/segment"
+  },
+  {
+    "icon": "albums",
+    "name": "Slides",
+    "redirecTo": "/slides"
   }
 ]

@@ -25,7 +25,8 @@ const routes: Routes = [
   { path: 'popover', loadChildren: './pages/popover/popover.module#PopoverPageModule' },
   { path: 'refresher', loadChildren: './pages/refresher/refresher.module#RefresherPageModule' },
   { path: 'progress-bar', loadChildren: './pages/progress-bar/progress-bar.module#ProgressBarPageModule' },  { path: 'searchbar', loadChildren: './pages/searchbar/searchbar.module#SearchbarPageModule' },
-  { path: 'segment', loadChildren: './pages/segment/segment.module#SegmentPageModule' }
+  { path: 'segment', loadChildren: './pages/segment/segment.module#SegmentPageModule' },
+  { path: 'slides', loadChildren: './pages/slides/slides.module#SlidesPageModule' }
 
 ];
 
