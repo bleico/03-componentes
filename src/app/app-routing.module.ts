@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'refresher', loadChildren: './pages/refresher/refresher.module#RefresherPageModule' },
   { path: 'progress-bar', loadChildren: './pages/progress-bar/progress-bar.module#ProgressBarPageModule' },  { path: 'searchbar', loadChildren: './pages/searchbar/searchbar.module#SearchbarPageModule' },
   { path: 'segment', loadChildren: './pages/segment/segment.module#SegmentPageModule' },
-  { path: 'slides', loadChildren: './pages/slides/slides.module#SlidesPageModule' }
+  { path: 'slides', loadChildren: './pages/slides/slides.module#SlidesPageModule' },
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
 
 ];
 
