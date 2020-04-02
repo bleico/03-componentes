@@ -5,7 +5,7 @@
     "redirecTo": "/action-sheet"
   },
   {
-    "icon": "appstore",
+    "icon": "apps",
     "name": "Alert",
     "redirecTo": "/alert"
   },
@@ -60,7 +60,7 @@
     "redirecTo": "/list"
   },
   {
-    "icon": "reorder",
+    "icon": "reorder-three",
     "name": "Listas - Reorder",
     "redirecTo": "/list-reorder"
   },
@@ -85,7 +85,7 @@
     "redirecTo": "/progress-bar"
   },
   {
-    "icon": "arrow-round-down",
+    "icon": "arrow-down",
     "name": "Refresher",
     "redirecTo": "/refresher"
   },

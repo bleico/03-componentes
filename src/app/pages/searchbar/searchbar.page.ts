@@ -24,7 +24,7 @@ export class SearchbarPage implements OnInit {
   }
 
   buscar(event) {
-    //console.log(event);
+    console.log(event);
     this.textoBuscar = event.detail.value;
   }
 

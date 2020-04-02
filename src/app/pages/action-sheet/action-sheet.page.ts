@@ -34,7 +34,7 @@ export class ActionSheetPage implements OnInit {
         },
         {
           text: "Play (open modal)",
-          icon: "arrow-dropright-circle",
+          icon: "arrow-redo-circle",
           handler: () => {
             console.log("Play clicked");
           }

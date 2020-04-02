@@ -10,7 +10,7 @@ import { IonList, ToastController } from '@ionic/angular';
 })
 export class ListPage implements OnInit {
 
-  @ViewChild('lista') lista: IonList;
+  @ViewChild('lista', { static: true }) lista: IonList;
 
   usuarios: Observable<any>;
 

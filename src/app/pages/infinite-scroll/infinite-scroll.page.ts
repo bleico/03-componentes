@@ -8,7 +8,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class InfiniteScrollPage implements OnInit {
 
-  @ViewChild(IonInfiniteScroll) InfiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonInfiniteScroll, { static: true }) InfiniteScroll: IonInfiniteScroll;
 
   data: any[] = Array(20);
   constructor() { }

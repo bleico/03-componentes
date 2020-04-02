@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class SegmentPage implements OnInit {
 
-  @ViewChild(IonSegment) segment: IonSegment;
+  @ViewChild(IonSegment, { static: true }) segment: IonSegment;
 
   superHeroes: Observable<any>;
   publisher = '';
