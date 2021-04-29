@@ -1,3 +1,4 @@
+import { AlertController } from '@ionic/angular';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -6,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Componente } from './interfaces/interfaces';
 import { Observable } from 'rxjs';
 import { DataService } from './services/data.service';
+import { UserIdleService } from 'angular-user-idle';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +17,18 @@ import { DataService } from './services/data.service';
 export class AppComponent {
 
   componentes: Observable<Componente[]>;
+  countdown: number;
+  timeOut: any;
+  onAlert: boolean;
+  contador: number;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private dataService: DataService
+    private dataService: DataService,
+    private userIdle: UserIdleService,
+    private alertController: AlertController
   ) {
     this.initializeApp();
   }
@@ -30,7 +39,47 @@ export class AppComponent {
       this.splashScreen.hide();
 
       this.componentes = this.dataService.getMenuOpts();
-
+      this.initInterval();
     });
   }
+
+  initInterval() {
+    const countador = interval(10000);
+    countador.subscribe((seg) => {
+      seg *= 5;
+      console.log(seg);
+      this.presentAlert(seg);
+    });
+  }
+  
+  async presentAlert(seg) {
+    const alert = await this.alertController.create({
+      header: `Pasaron ${seg} segundos`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            
+          },
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+         
+          },
+        },
+      ],
+      cssClass: "alert-class alertCustom",
+      backdropDismiss: false,
+    });
+
+    await alert.present().finally(() => {
+      const count = interval(6000);
+      count.subscribe(() => {
+        alert.dismiss();
+      })
+    });
+  }
+
+
 }
