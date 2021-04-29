@@ -51,7 +51,7 @@ export class AppComponent {
       this.presentAlert(seg);
     });
   }
-  
+
   async presentAlert(seg) {
     const alert = await this.alertController.create({
       header: `Pasaron ${seg} segundos`,
@@ -59,25 +59,23 @@ export class AppComponent {
         {
           text: 'Cancelar',
           handler: () => {
-            
+
           },
         },
         {
           text: 'Aceptar',
           handler: () => {
-         
+
           },
         },
       ],
       cssClass: "alert-class alertCustom",
-      backdropDismiss: false,
     });
 
-    await alert.present().finally(() => {
-      const count = interval(6000);
-      count.subscribe(() => {
-        alert.dismiss();
-      })
+    await alert.present()
+    const count = interval(4000);
+    count.subscribe(async () => {
+      await alert.dismiss();
     });
   }
 
